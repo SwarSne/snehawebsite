@@ -3,17 +3,17 @@
    ========================================================= */
 :root {
   color-scheme: dark;
-  --bg: #0c0a14;
-  --bg-alt: #110e1c;
-  --surface: #161226;
-  --surface-2: #1d1830;
-  --line: #2a2340;
-  --ink: #ece8f6;
-  --muted: #9d95b5;
-  --accent: #a78bfa;
-  --accent-2: #f472b6;
-  --grad: linear-gradient(100deg, #a78bfa 0%, #e879f9 50%, #f472b6 100%);
-  --glow: rgba(167, 139, 250, .16);
+  --bg: #07101d;
+  --bg-alt: #0b1727;
+  --surface: #0f1d31;
+  --surface-2: #14253d;
+  --line: #20354f;
+  --ink: #eaf1fa;
+  --muted: #93a6bf;
+  --accent: #5aa9e6;
+  --accent-2: #ffd100;
+  --grad: linear-gradient(100deg, #5aa9e6 0%, #8cc8f2 45%, #ffd100 100%);
+  --glow: rgba(90, 169, 230, .16);
   --shadow: 0 24px 60px -30px rgba(0, 0, 0, .7);
   --radius: 18px;
   --display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -22,33 +22,33 @@
 }
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #faf8ff;
-  --bg-alt: #f3effb;
+  --bg: #f6f9fd;
+  --bg-alt: #edf3fa;
   --surface: #ffffff;
-  --surface-2: #f5f2fc;
-  --line: #e6e0f2;
-  --ink: #1a1530;
-  --muted: #5e5778;
-  --accent: #7c3aed;
-  --accent-2: #db2777;
-  --grad: linear-gradient(100deg, #7c3aed 0%, #c026d3 50%, #db2777 100%);
-  --glow: rgba(124, 58, 237, .09);
+  --surface-2: #f1f6fc;
+  --line: #dbe5f1;
+  --ink: #0d1b2e;
+  --muted: #4f6381;
+  --accent: #2774ae;
+  --accent-2: #a87b00;
+  --grad: linear-gradient(100deg, #005587 0%, #2774ae 50%, #c99700 100%);
+  --glow: rgba(39, 116, 174, .10);
   --shadow: 0 24px 50px -30px rgba(20, 30, 60, .35);
 }
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
     color-scheme: light;
-    --bg: #faf8ff;
-    --bg-alt: #f3effb;
+    --bg: #f6f9fd;
+    --bg-alt: #edf3fa;
     --surface: #ffffff;
-    --surface-2: #f5f2fc;
-    --line: #e6e0f2;
-    --ink: #1a1530;
-    --muted: #5e5778;
-    --accent: #7c3aed;
-    --accent-2: #db2777;
-    --grad: linear-gradient(100deg, #7c3aed 0%, #c026d3 50%, #db2777 100%);
-    --glow: rgba(124, 58, 237, .09);
+    --surface-2: #f1f6fc;
+    --line: #dbe5f1;
+    --ink: #0d1b2e;
+    --muted: #4f6381;
+    --accent: #2774ae;
+    --accent-2: #a87b00;
+    --grad: linear-gradient(100deg, #005587 0%, #2774ae 50%, #c99700 100%);
+    --glow: rgba(39, 116, 174, .10);
     --shadow: 0 24px 50px -30px rgba(20, 30, 60, .35);
   }
 }
@@ -589,3 +589,33 @@ h1, h2 { font-weight: 600; letter-spacing: -.015em; }
 .lg.link { height: 4px; width: 16px; background: color-mix(in oklab, var(--accent) 50%, var(--line)); }
 @media (max-width: 1000px) { .explorer { grid-template-columns: 1fr; } .ex-stage { border-right: 0; border-bottom: 1px solid var(--line); } }
 @media (max-width: 480px) { .ex-controls { grid-template-columns: 1fr; } .ex-stage { padding: 10px 10px 44px; } }
+
+/* UCLA identity + internship */
+.logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 600; font-size: 1.25rem; letter-spacing: -.01em; }
+.logo-ucla { height: 18px; width: auto; border-radius: 3px; }
+.affil { display: inline-flex; align-items: center; gap: 12px; margin: 0 0 1.1rem; padding: 6px 14px 6px 6px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: .86rem; color: var(--muted); }
+.affil img { height: 24px; width: auto; border-radius: 5px; }
+.affil strong { color: var(--ink); font-weight: 600; }
+.hero h1 { font-size: clamp(2.4rem, 5.6vw, 4rem); }
+.chip-b img { height: 16px; width: auto; border-radius: 3px; }
+a.chip { text-decoration: none; color: var(--ink); }
+.chip-a { top: 5%; left: -16%; border-color: color-mix(in oklab, var(--accent-2) 55%, var(--line)); }
+.chip-a .pulse { background: var(--accent-2); }
+.photo-card img { object-position: center 30%; }
+.intern-wrap { margin-top: 28px; }
+.intern { display: grid; grid-template-columns: auto 1fr auto; gap: 22px; align-items: center; padding: 22px 26px;
+  background: linear-gradient(100deg, color-mix(in oklab, var(--accent) 14%, var(--surface)), color-mix(in oklab, var(--accent-2) 12%, var(--surface)));
+  border-color: color-mix(in oklab, var(--accent-2) 45%, var(--line)); }
+.intern-icon { font-size: 2rem; width: 60px; height: 60px; display: grid; place-items: center; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.intern .kicker { color: var(--accent-2); margin-bottom: .2rem; }
+.intern h3 { font-family: var(--display); font-size: 1.35rem; margin: 0 0 .2em; }
+.intern-text p:last-child { margin: 0; color: var(--muted); }
+.intern-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.intern-note { display: flex; gap: 12px; align-items: baseline; padding: 14px 16px; border-radius: 14px; margin: 6px 0 18px;
+  background: color-mix(in oklab, var(--accent-2) 10%, var(--surface)); border: 1px solid color-mix(in oklab, var(--accent-2) 40%, var(--line)); }
+.intern-note .pulse { flex: none; background: var(--accent-2); transform: translateY(-1px); }
+.intern-note p { margin: 0; color: var(--muted); }
+.intern-note strong { color: var(--ink); }
+.footer a { color: var(--accent); text-decoration: none; }
+@media (max-width: 860px) { .intern { grid-template-columns: 1fr; text-align: left; } .logo-ucla { display: none; } }
+@media (max-width: 480px) { .affil { font-size: .78rem; } .logo { font-size: 1.05rem; } }

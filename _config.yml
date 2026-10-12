@@ -8,7 +8,14 @@ baseurl: ""
 lang: en
 location: "Los Angeles, CA"
 email: "swaroopasneha25@ucla.edu"
-image: /assets/og.png
+image: /assets/sneha.jpg
+photo: /assets/sneha.jpg
+
+# Shown on Home and About. Set enabled: false to hide.
+internship:
+  enabled: true
+  season: "Summer 2027"
+  areas: "AI accelerator & chiplet architecture, hardware security, and EDA"
 
 social:
   name: "Sneha Swaroopa"

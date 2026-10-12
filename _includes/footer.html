@@ -2,7 +2,7 @@
   <div class="container footer-inner">
     <div>
       <p class="footer-name">{{ site.title }}</p>
-      <p class="muted small">PhD Student, ECE · UCLA · {{ site.location }}</p>
+      <p class="muted small">PhD Student, ECE · UCLA · {{ site.location }}{% if site.internship.enabled %} · <a href="{{ '/about/' | relative_url }}#internship">Open to {{ site.internship.season }} internships</a>{% endif %}</p>
     </div>
     <ul class="footer-links">
       <li><a href="mailto:{{ site.email }}">Email</a></li>

@@ -11,8 +11,8 @@ slug: home
   <div class="circuit-bg" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-text reveal">
-      <p class="kicker mono">// {{ site.tagline }}</p>
-      <h1>Hi, I'm <span class="grad">Sneha</span>.</h1>
+      <p class="affil"><img src="{{ '/assets/logos/ucla.png' | relative_url }}" alt="UCLA" width="54" height="24"><span>Electrical &amp; Computer Engineering · <strong>UCLA Samueli School of Engineering</strong></span></p>
+      <h1>Hi, I'm <span class="grad">Sneha Swaroopa</span>.</h1>
       <ul class="creds" aria-label="Credentials">
         <li><img src="{{ '/assets/logos/ucla.png' | relative_url }}" alt="" width="22" height="22"> <strong>PhD</strong> UCLA ECE</li>
         <li><img src="{{ '/assets/logos/iitkgp.png' | relative_url }}" alt="" width="22" height="22"> <strong>M.S.</strong> IIT Kharagpur</li>
@@ -40,8 +40,8 @@ slug: home
         </div>
       </div>
       {% endif %}
-      <div class="chip chip-a"><span class="pulse"></span> ICCAD '26 accepted</div>
-      <div class="chip chip-b mono">📍 UCLA · Los Angeles</div>
+      {% if site.internship.enabled %}<a class="chip chip-a" href="{{ '/about/' | relative_url }}#internship"><span class="pulse"></span> Open to {{ site.internship.season }} internships</a>{% endif %}
+      <div class="chip chip-b"><img src="{{ '/assets/logos/ucla.png' | relative_url }}" alt="" width="34" height="16"> PhD · ECE</div>
     </div>
   </div>
 </section>
@@ -52,6 +52,23 @@ slug: home
   <div class="stat"><strong><span class="count" data-to="{{ patents.size }}">{{ patents.size }}</span></strong><span>Patents filed</span></div>
   <div class="stat"><strong><span class="count" data-to="5">5</span></strong><span>Research labs &amp; industry roles</span></div>
 </section>
+
+{% if site.internship.enabled %}
+<section class="container intern-wrap reveal" id="internship-home">
+  <div class="intern card">
+    <div class="intern-icon" aria-hidden="true">🚀</div>
+    <div class="intern-text">
+      <p class="kicker mono">Now seeking</p>
+      <h3>{{ site.internship.season }} research or engineering internships</h3>
+      <p>in {{ site.internship.areas }}.</p>
+    </div>
+    <div class="intern-actions">
+      <a class="btn btn-primary" href="mailto:{{ site.email }}?subject={{ site.internship.season | url_encode }}%20internship">Email me</a>
+      <a class="btn btn-ghost" href="{{ site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+{% endif %}
 
 <section class="section">
   <div class="container">

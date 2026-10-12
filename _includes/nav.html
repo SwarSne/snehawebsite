@@ -1,7 +1,7 @@
 {% assign tabs = "Home|/,Research|/research/,Publications|/publications/,Experience|/experience/,About|/about/" | split: "," %}
 <header class="nav-wrap">
   <nav class="nav container" aria-label="Main">
-    <a class="logo" href="{{ '/' | relative_url }}" aria-label="Home">sneha<i>.</i></a>
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="Sneha Swaroopa, home">Sneha Swaroopa<i>.</i><img class="logo-ucla" src="{{ '/assets/logos/ucla.png' | relative_url }}" alt="UCLA" width="40" height="18"></a>
     <div class="tabs" id="nav-links" role="list">
       {% for t in tabs %}{% assign p = t | split: "|" %}
       <a role="listitem" href="{{ p[1] | relative_url }}" {% if page.url == p[1] or page.url == p[1] | append: 'index.html' %}class="active" aria-current="page"{% endif %}>{{ p[0] }}</a>

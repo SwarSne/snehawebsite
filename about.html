@@ -12,6 +12,9 @@ slug: about
       <p>I'm a PhD student in Electrical and Computer Engineering at <strong>UCLA</strong>, where I work on <strong>chiplet-based LLM accelerators built with advanced packaging</strong>, and on the security of those systems.</p>
       <p>I completed my M.S. in Computer Science &amp; Engineering at <strong>IIT Kharagpur</strong>, specialising in hardware security (GPA 9.68/10). Along the way I worked on side-channel attacks at <strong>IISc</strong>, deep-learning side-channel analysis at the <strong>University of Florida</strong>, and entropy estimation and SHA-3 at <strong>Qualcomm</strong>.</p>
       <p>Outside the lab you'll find me strength training, swimming, or debating.</p>
+      {% if site.internship.enabled %}
+      <div class="intern-note" id="internship"><span class="pulse"></span><p><strong>Looking for {{ site.internship.season }} internships</strong> in {{ site.internship.areas }}. I'd love to hear about research or engineering roles on AI hardware, chiplet systems or hardware security.</p></div>
+      {% endif %}
       <div class="contact-actions left">
         <button class="btn btn-primary copy-email" data-email="{{ site.email }}"><span>{{ site.email }}</span>
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a1 1 0 0 1 1-1h9" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
