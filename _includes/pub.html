@@ -4,7 +4,7 @@
   <div class="pub-meta">
     {% if p.venue_short != "" %}<span class="venue-tag">{{ p.venue_short }}{% if p.year != "" %} '{{ p.year | slice: 2, 2 }}{% endif %}</span>{% endif %}
     <span class="status s-{{ p.status }}">{% case p.status %}{% when 'published' %}Published{% when 'accepted' %}Accepted{% when 'filed' %}Filed{% else %}Under review{% endcase %}</span>
-    {% if p.first_author %}<span class="first">★ {% if p.type == 'patent' %}Primary inventor{% else %}First author{% endif %}</span>{% endif %}
+    {% if p.first_author %}<span class="first-badge">★ {% if p.type == 'patent' %}Primary inventor{% else %}First author{% endif %}</span>{% endif %}
   </div>
   <h3>{{ p.title }}</h3>
   <p class="authors">{{ p.authors | replace: "Sneha Swaroopa", "<strong>Sneha Swaroopa</strong>" }}</p>

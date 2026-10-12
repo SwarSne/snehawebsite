@@ -1,0 +1,8 @@
+{% comment %} Interactive die grid. include.cols / include.rows / include.label {% endcomment %}
+<div class="chip-grid-wrap{% if include.class %} {{ include.class }}{% endif %}" aria-hidden="true">
+  <div class="chip-pkg">
+    <div class="pins pins-t"></div><div class="pins pins-b"></div><div class="pins pins-l"></div><div class="pins pins-r"></div>
+    <div class="chip-grid" data-cols="{{ include.cols | default: 10 }}" data-rows="{{ include.rows | default: 6 }}"></div>
+    {% if include.label %}<span class="chip-tag mono">{{ include.label }}</span>{% endif %}
+  </div>
+</div>

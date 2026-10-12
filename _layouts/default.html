@@ -6,6 +6,7 @@
 <body class="page-{{ page.slug | default: 'home' }}">
   <div class="progress" aria-hidden="true"></div>
   <div class="spotlight" aria-hidden="true"></div>
+  {% include circuit.html %}
   {% include nav.html %}
   <main id="main">
     {{ content }}
@@ -15,5 +16,6 @@
   <div class="toast" role="status" aria-live="polite" hidden></div>
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/explorer.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/chipgrid.js' | relative_url }}" defer></script>
 </body>
 </html>

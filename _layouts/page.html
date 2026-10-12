@@ -3,10 +3,13 @@ layout: default
 ---
 <section class="page-head">
   <div class="circuit-bg" aria-hidden="true"></div>
-  <div class="container">
-    <p class="kicker mono">// {{ page.kicker }}</p>
-    <h1>{{ page.heading | default: page.title }}</h1>
-    {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+  <div class="container page-head-grid">
+    <div>
+      <p class="kicker mono">// {{ page.kicker }}</p>
+      <h1>{{ page.heading | default: page.title }}</h1>
+      {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+    </div>
+    {% include chip-grid.html cols=11 rows=6 label=page.chip_label %}
   </div>
 </section>
 {{ content }}
