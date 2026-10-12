@@ -1,0 +1,17 @@
+<div class="palette" role="dialog" aria-modal="true" aria-label="Command menu" hidden>
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Jump to a page, paper or link…" aria-label="Search" autocomplete="off">
+    <ul class="palette-list" role="listbox">
+      <li role="option" data-href="{{ '/' | relative_url }}">Home</li>
+      <li role="option" data-href="{{ '/research/' | relative_url }}">Research</li>
+      <li role="option" data-href="{{ '/publications/' | relative_url }}">Publications</li>
+      <li role="option" data-href="{{ '/experience/' | relative_url }}">Experience &amp; Education</li>
+      <li role="option" data-href="{{ '/about/' | relative_url }}">About, Awards &amp; Service</li>
+      {% for p in site.data.publications %}<li role="option" data-href="{{ '/publications/' | relative_url }}#{{ p.id }}">Paper: {{ p.title }}</li>{% endfor %}
+      <li role="option" data-action="copy-email">Copy email address</li>
+      <li role="option" data-action="theme">Toggle light / dark theme</li>
+      <li role="option" data-href="{{ site.links.linkedin }}" data-external>Open LinkedIn</li>
+    </ul>
+    <p class="palette-hint mono"><kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>↵</kbd> open · <kbd>esc</kbd> close</p>
+  </div>
+</div>

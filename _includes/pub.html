@@ -1,0 +1,19 @@
+{% comment %} Renders one publication. Pass include.p {% endcomment %}
+{% assign p = include.p %}
+<article class="pub card" id="{{ p.id }}" data-type="{{ p.type }}" data-status="{{ p.status }}" data-first="{{ p.first_author }}">
+  <div class="pub-meta">
+    {% if p.venue_short != "" %}<span class="venue-tag">{{ p.venue_short }}{% if p.year != "" %} '{{ p.year | slice: 2, 2 }}{% endif %}</span>{% endif %}
+    <span class="status s-{{ p.status }}">{% case p.status %}{% when 'published' %}Published{% when 'accepted' %}Accepted{% when 'filed' %}Filed{% else %}Under review{% endcase %}</span>
+    {% if p.first_author %}<span class="first">★ {% if p.type == 'patent' %}Primary inventor{% else %}First author{% endif %}</span>{% endif %}
+  </div>
+  <h3>{{ p.title }}</h3>
+  <p class="authors">{{ p.authors | replace: "Sneha Swaroopa", "<strong>Sneha Swaroopa</strong>" }}</p>
+  {% if p.venue != "" %}<p class="venue">{{ p.venue }}{% if p.year != "" %}, {{ p.year }}{% endif %}</p>{% endif %}
+  <details class="pub-more">
+    <summary>Summary</summary>
+    <p>{{ p.summary }}</p>
+  </details>
+  {% if p.links.size > 0 %}
+  <div class="pub-links">{% for l in p.links %}<a class="pill-link" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a>{% endfor %}</div>
+  {% endif %}
+</article>

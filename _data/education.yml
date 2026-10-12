@@ -1,0 +1,18 @@
+- school: "University of California, Los Angeles (UCLA)"
+  logo_img: /assets/logos/ucla.png
+  degree: "PhD, Electrical & Computer Engineering"
+  dates: "Sep 2025 – Present"
+  detail: "Chiplet-based LLM accelerator design using advanced packaging and its security analysis"
+  gpa: "3.97 / 4.0"
+- school: "Indian Institute of Technology, Kharagpur"
+  logo_img: /assets/logos/iitkgp.png
+  degree: "M.S., Computer Science & Engineering"
+  dates: "Jan 2023 – Dec 2024"
+  detail: "Specialization: Hardware Security"
+  gpa: "9.68 / 10"
+- school: "Guru Gobind Singh Indraprastha University"
+  logo: "IP"
+  degree: "B.Tech, Electrical & Electronics Engineering"
+  dates: "Aug 2016 – Sep 2020"
+  detail: "Ranked 2nd of 1,151 EEE undergraduates (2017)"
+  gpa: "9.26 / 10"

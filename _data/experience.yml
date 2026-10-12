@@ -1,0 +1,60 @@
+- org: "University of California, Los Angeles"
+  logo_img: /assets/logos/ucla.png
+  location: "Los Angeles, CA"
+  role: "PhD Researcher, Electrical & Computer Engineering"
+  dates: "Sep 2025 – Present"
+  highlights:
+    - "Chiplet-based **LLM accelerator** design using advanced packaging, and its security analysis"
+    - "First-author papers accepted at **ICCAD 2026** (NoWLeak) and **MWSCAS 2026** (HERA)"
+  tags: ["Chiplets", "LLM Accelerators", "Hardware Security"]
+
+- org: "Indian Institute of Science (IISc)"
+  logo_img: /assets/logos/iisc.png
+  location: "Bengaluru, India"
+  role: "Researcher"
+  dates: "Jan 2025 – Jun 2025"
+  highlights:
+    - "Side-channel attacks on **Hitachi** power-system equipment (funded by PGCoE) and on post-quantum **Kyber**"
+    - "Identified security-critical encrypted components in Intelligent Electronic Devices via network reverse engineering"
+    - "Prototyped side-channel attacks on **AES-GCM in TLS**; SCA on AES-CBC/GCM with ChipWhisperer; completed Kyber RTL"
+  tags: ["ChipWhisperer", "IED REC 670", "Verilog", "Wireshark"]
+
+- org: "University of Florida"
+  logo_img: /assets/logos/ufl.png
+  location: "Gainesville, FL"
+  role: "Researcher"
+  dates: "Jul 2024 – Dec 2024"
+  highlights:
+    - "Deep-learning model design for **side-channel analysis** on FPGA"
+    - "Automated 1,200 Arduino UNO assembly programs (Perl) and collected **300,000** oscilloscope traces (MATLAB)"
+    - "Achieved **100% opcode-level accuracy** with CUDA-accelerated deep learning; FPGA implementation in Verilog"
+  tags: ["Deep Learning", "CUDA", "Assembly", "MATLAB"]
+
+- org: "Qualcomm"
+  logo_img: /assets/logos/qualcomm.png
+  location: "Bengaluru, India"
+  role: "Security Engineering Intern"
+  dates: "May 2024 – Jun 2024"
+  highlights:
+    - "Implemented the **Multi Most Common in Window (MMCW)** entropy-estimation technique"
+    - "Implemented **SHA-3** and **cSHAKE** in Python and Verilog"
+  tags: ["Entropy Estimation", "SHA-3", "Verilog"]
+
+- org: "Indian Institute of Technology, Kharagpur"
+  logo_img: /assets/logos/iitkgp.png
+  location: "Kharagpur, India"
+  role: "Junior Research Fellow (JRF)"
+  dates: "Jun 2022 – Mar 2024"
+  highlights:
+    - "Cyber security of power systems through design-for-prevention, real-time detection and effective intervention, a project with the Central Power Research Institute (CPRI)"
+    - "Member of the Secured Embedded Architecture Laboratory (SEAL)"
+  tags: ["Power-System Security", "FPGA", "PUF"]
+
+- org: "Tata Consultancy Services"
+  logo_img: /assets/logos/tcs.png
+  location: "Bhubaneswar, India"
+  role: "Software Engineer"
+  dates: "Feb 2021 – May 2022"
+  highlights:
+    - "Built and maintained Java automation, Jenkins radiators and test environments for Kingfisher PLC's store web application across agile teams"
+  tags: ["Java", "Selenium", "Jenkins", "REST APIs"]

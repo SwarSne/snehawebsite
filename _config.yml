@@ -1,0 +1,30 @@
+title: "Sneha Swaroopa"
+tagline: "PhD Student · Electrical & Computer Engineering · UCLA"
+description: >-
+  Sneha Swaroopa: PhD student in Electrical and Computer Engineering at UCLA, researching
+  chiplet-based LLM accelerators using advanced packaging and their hardware security.
+url: ""            # set to "https://<your-domain>" once a domain is connected
+baseurl: ""
+lang: en
+location: "Los Angeles, CA"
+email: "swaroopasneha25@ucla.edu"
+image: /assets/og.png
+
+social:
+  name: "Sneha Swaroopa"
+  links:
+    - "https://www.linkedin.com/in/swaroopas22/"
+    - "https://github.com/SwarSne"
+
+links:
+  linkedin: "https://www.linkedin.com/in/swaroopas22/"
+  github: "https://github.com/SwarSne"
+  scholar: ""      # Google Scholar profile URL, if any
+  cv: ""           # e.g. /assets/Sneha_Swaroopa_CV.pdf once a final PDF is ready
+
+analytics:
+  google_id: ""
+  goatcounter: ""
+
+plugins: [jekyll-seo-tag, jekyll-sitemap]
+exclude: [README.md, Gemfile, Gemfile.lock, vendor, .github]

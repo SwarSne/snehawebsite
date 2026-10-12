@@ -1,0 +1,161 @@
+# status: published | accepted | review     type: conference | journal | patent
+# Leave venue empty for works under double-blind review.
+- id: nowleak
+  title: "NoWLeak: Side-Channel Attacks on Network-on-Wafer"
+  authors: "Sneha Swaroopa et al."
+  venue: "IEEE/ACM International Conference on Computer-Aided Design (ICCAD)"
+  venue_short: "ICCAD"
+  year: 2026
+  type: conference
+  status: accepted
+  first_author: true
+  theme: chiplet-security
+  summary: "Investigates side-channel leakage arising at the network-on-wafer interconnect level in wafer-scale chiplet systems."
+  links: []
+
+- id: hera
+  title: "HERA: A Substrate-Level Covert Channel Detector for Heterogeneous Chiplet Systems"
+  authors: "Sneha Swaroopa et al."
+  venue: "IEEE International Midwest Symposium on Circuits and Systems (MWSCAS)"
+  venue_short: "MWSCAS"
+  year: 2026
+  type: conference
+  status: accepted
+  first_author: true
+  theme: chiplet-security
+  summary: "Proposes a substrate-level detection mechanism for covert channels in heterogeneous chiplet-based systems."
+  links: []
+
+- id: isqed26
+  title: "Scalable Security Monitoring on Chiplet-Based Systems"
+  authors: "Pooya Aghanoury, Sneha Swaroopa, Dao Xian Ding, Farshad Firouzi, Nader Sehatbakhsh"
+  venue: "IEEE International Symposium on Quality Electronic Design (ISQED)"
+  venue_short: "ISQED"
+  year: 2026
+  type: conference
+  status: published
+  first_author: false
+  theme: chiplet-security
+  summary: "A scalable security-helper-chiplet architecture enabling distributed on-package hardware monitoring for Edge-AI chiplet systems, with validated area, power and cost trade-offs."
+  links:
+    - { label: "Abstract", url: "https://isqed.org/English/Archives/2026/Technical_Sessions/208.html" }
+
+- id: atlas
+  title: "ATLAS: Architecting Wafer-Scale Chiplet-Based Accelerator for LLMs on Silicon Interconnect Fabric"
+  authors: "Sneha Swaroopa et al."
+  venue: ""
+  venue_short: ""
+  year: 2026
+  type: conference
+  status: review
+  first_author: true
+  theme: accelerators
+  summary: "A scalable chiplet accelerator for large language model (LLM) inference on silicon interconnect fabric (SiIF), using a novel hierarchical communication protocol, with system-level design-space exploration of performance, power and area."
+  links: []
+
+- id: wsbnn
+  title: "Weak No More: Architecting Strong PUF Using Weak-Seeded Binarized Neural Networks (WS-BNN)"
+  authors: "Sneha Swaroopa et al."
+  venue: ""
+  venue_short: ""
+  year: 2026
+  type: conference
+  status: review
+  first_author: false
+  theme: hw-security
+  summary: "A Weak-Seeded Binarized Neural Network PUF that combines reliable weak-PUF entropy with neural-network non-linearity for low-overhead, machine-learning-resilient hardware authentication."
+  links: []
+
+- id: ats
+  title: "Security Vulnerabilities in AI Hardware: Threats and Countermeasures"
+  authors: "Sneha Swaroopa et al."
+  venue: "IEEE Asian Test Symposium (ATS)"
+  venue_short: "ATS"
+  year: ""
+  type: conference
+  status: published
+  first_author: false
+  theme: hw-security
+  summary: "Studies, analyses and compares evasion attacks that tamper with the inference phase of AI systems deployed in hardware."
+  links: []
+
+- id: fnt-eda
+  title: "Evaluating Large Language Models for Automatic Register Transfer Logic Generation via High-Level Synthesis"
+  authors: "Sneha Swaroopa, Rijoy Mukherjee, Anushka Debnath, Rajat Subhra Chakraborty"
+  venue: "Foundations and Trends® in Electronic Design Automation, Vol. 14, No. 4 (special issue on Deep-learning Algorithms and Generative AI for SoC and Chiplet Design and Verification)"
+  venue_short: "FnT EDA"
+  year: 2025
+  type: journal
+  status: published
+  first_author: true
+  theme: llm-eda
+  summary: "Evaluates GPT-3.5 Turbo, GPT-4o, Claude 3 Haiku and Claude 3.5 Sonnet for generating HLS-annotated C++ that Vitis HLS turns into Verilog RTL, a two-stage flow that outperforms direct LLM-generated Verilog on functional correctness."
+  links:
+    - { label: "Journal", url: "https://www.nowpublishers.com/article/Details/EDA-063-3" }
+    - { label: "arXiv", url: "https://arxiv.org/abs/2408.02793" }
+
+- id: esl
+  title: "A Provably Secure Scheme to Prevent Master Key Recovery by Fault Attack on AES Hardware"
+  authors: "Sneha Swaroopa et al."
+  venue: "IEEE Embedded Systems Letters (ESL)"
+  venue_short: "IEEE ESL"
+  year: 2024
+  type: journal
+  status: published
+  first_author: true
+  theme: hw-security
+  summary: "An encryption-key-transformation scheme that prevents fault attacks on AES, implemented in Verilog on FPGA (via UART) and backed by a formal cryptographic proof of security that corroborates the hardware results."
+  links:
+    - { label: "DOI", url: "https://doi.org/10.1109/LES.2024.3472673" }
+
+- id: pufbind
+  title: "PUFBind: Physically Unclonable Function based Program Binary Authentication and Binding with Trusted Hardware on FPGA"
+  authors: "Sneha Swaroopa et al."
+  venue: ""
+  venue_short: ""
+  year: ""
+  type: journal
+  status: review
+  first_author: true
+  theme: hw-security
+  summary: "Binds a SHA-derived hash of the program binary to the FPGA's PUF signature, so embedded binaries only execute after runtime authentication of both platform and code. An FSM streams BRAM data to the SHA engine, aligned to its block latency."
+  links: []
+
+- id: tls-ied
+  title: "Side Channel Attack on Transport Layer Security (TLS) of Intelligent Electronic Devices (IEDs) installed in Power Grids"
+  authors: "Sneha Swaroopa et al."
+  venue: ""
+  venue_short: ""
+  year: ""
+  type: journal
+  status: review
+  first_author: false
+  theme: hw-security
+  summary: "Reverse-engineers the cryptography used in Hitachi IEDs, emulates it in bare-metal mode, and attacks it through power and electromagnetic side channels."
+  links: []
+
+- id: patent-trust
+  title: "Trust Establishment of Program Binary on Field Programmable Gate Array using Physically Unclonable Function"
+  authors: "Primary Inventor"
+  venue: "Provisional Indian patent filed, April 2024 (Ref. 5691/ASA/PP-4423/IIT,Kgp)"
+  venue_short: "Patent"
+  year: 2024
+  type: patent
+  status: filed
+  first_author: true
+  theme: hw-security
+  summary: "PUF-based trust establishment for program binaries running on FPGA platforms."
+  links: []
+
+- id: patent-untrusted
+  title: "Untrusted Hardware Module Identification and Reporting for Secure System Implementation on Field Programmable Gate Array Platform"
+  authors: "Co-Inventor"
+  venue: "Indian patent filed, January 2024 (Application No. E-106/71/2024/KOL)"
+  venue_short: "Patent"
+  year: 2024
+  type: patent
+  status: filed
+  first_author: false
+  theme: hw-security
+  summary: "Identifying and reporting untrusted hardware modules for secure system implementation on FPGAs."
+  links: []

@@ -1,0 +1,98 @@
+---
+layout: default
+title: "Sneha Swaroopa | PhD Student, ECE @ UCLA"
+slug: home
+---
+{% assign pubs = site.data.publications | where_exp: "p", "p.type != 'patent'" %}
+{% assign firsts = pubs | where: "first_author", true %}
+{% assign patents = site.data.publications | where: "type", "patent" %}
+
+<section class="hero">
+  <div class="circuit-bg" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <p class="kicker mono">// {{ site.tagline }}</p>
+      <h1>Hi, I'm <span class="grad">Sneha</span>.</h1>
+      <ul class="creds" aria-label="Credentials">
+        <li><img src="{{ '/assets/logos/ucla.png' | relative_url }}" alt="" width="22" height="22"> <strong>PhD</strong> UCLA ECE</li>
+        <li><img src="{{ '/assets/logos/iitkgp.png' | relative_url }}" alt="" width="22" height="22"> <strong>M.S.</strong> IIT Kharagpur</li>
+        <li><span class="cred-num">★</span> DAC '26 Young Fellow</li>
+      </ul>
+      <p class="typed-line">I research <span class="typed" data-words='["chiplet accelerators for LLMs.", "side channels in chiplet systems.", "secure advanced packaging.", "PUFs for hardware trust."]'>chiplet accelerators for LLMs.</span><span class="caret" aria-hidden="true"></span></p>
+      <p class="lead">I design <strong>chiplet-based accelerators for large language models</strong> using advanced packaging, and study how to keep them <strong>secure</strong>, from network-on-wafer side channels to substrate-level covert channels.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ '/research/' | relative_url }}">Explore my research</a>
+        <a class="btn btn-ghost" href="{{ '/publications/' | relative_url }}">Publications <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="socials" aria-label="Profiles">
+        <li><a href="{{ site.links.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg></a></li>
+        <li><a href="mailto:{{ site.email }}" aria-label="Email"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="hero-visual reveal">
+      {% if site.photo %}
+      <div class="photo-card tilt"><img src="{{ site.photo | relative_url }}" alt="Sneha Swaroopa" width="800" height="1000" fetchpriority="high"></div>
+      {% else %}
+      <div class="chip-art tilt" aria-hidden="true">
+        <div class="die">
+          {% for i in (1..9) %}<span class="chiplet c{{ i }}"></span>{% endfor %}
+          <span class="mono die-label">SS</span>
+        </div>
+      </div>
+      {% endif %}
+      <div class="chip chip-a"><span class="pulse"></span> ICCAD '26 accepted</div>
+      <div class="chip chip-b mono">📍 UCLA · Los Angeles</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats container reveal" aria-label="Highlights">
+  <div class="stat"><strong><span class="count" data-to="{{ pubs.size }}">{{ pubs.size }}</span></strong><span>Papers</span></div>
+  <div class="stat"><strong><span class="count" data-to="{{ firsts.size }}">{{ firsts.size }}</span></strong><span>First-author</span></div>
+  <div class="stat"><strong><span class="count" data-to="{{ patents.size }}">{{ patents.size }}</span></strong><span>Patents filed</span></div>
+  <div class="stat"><strong><span class="count" data-to="5">5</span></strong><span>Research labs &amp; industry roles</span></div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker mono">Research</p>
+      <h2>What I work on</h2>
+    </header>
+    <div class="theme-grid">
+      {% for r in site.data.research %}
+      <a class="theme card reveal" href="{{ '/research/' | relative_url }}#{{ r.key }}">
+        <span class="theme-icon">{{ r.icon }}</span>
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.short }}</p>
+        <span class="more mono">Read more →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include chiplet-explorer.html %}
+
+<section class="section section-alt">
+  <div class="container home-split">
+    <div>
+      <header class="section-head reveal">
+        <p class="kicker mono">Selected publications</p>
+        <h2>Recent papers</h2>
+      </header>
+      <div class="pub-list compact">
+        {% for p in site.data.publications %}{% if p.first_author and p.status != 'review' and p.type != 'patent' %}
+        {% include pub.html p=p %}
+        {% endif %}{% endfor %}
+      </div>
+      <a class="btn btn-ghost reveal" href="{{ '/publications/' | relative_url }}">All publications &amp; patents →</a>
+    </div>
+    <aside class="news card reveal">
+      <h3>News</h3>
+      <ul>
+        {% for n in site.data.news %}<li><span class="mono">{{ n.date }}</span><p>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</p></li>{% endfor %}
+      </ul>
+    </aside>
+  </div>
+</section>

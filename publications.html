@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Publications | Sneha Swaroopa"
+heading: "Publications & Patents"
+kicker: "Papers · Journals · Patents"
+intro: "Click Summary on any entry for a short description. Links go to the paper where it's publicly available."
+permalink: /publications/
+slug: publications
+---
+<section class="section first">
+  <div class="container">
+    <div class="pub-toolbar reveal">
+      <div class="filters" role="group" aria-label="Filter by type">
+        <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="conference" aria-pressed="false">Conference</button>
+        <button class="filter" data-filter="journal" aria-pressed="false">Journal</button>
+        <button class="filter" data-filter="patent" aria-pressed="false">Patents</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="first-only"> <span>First-author only</span></label>
+    </div>
+    <p class="muted small count-line reveal"><span id="pub-count"></span></p>
+    <div class="pub-list" id="pub-list">
+      {% for p in site.data.publications %}{% include pub.html p=p %}{% endfor %}
+    </div>
+  </div>
+</section>

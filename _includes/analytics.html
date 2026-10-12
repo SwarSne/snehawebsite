@@ -1,0 +1,16 @@
+{% if jekyll.environment == "production" %}
+  {% if site.analytics.google_id and site.analytics.google_id != "" %}
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '{{ site.analytics.google_id }}');
+  </script>
+  {% endif %}
+  {% if site.analytics.goatcounter and site.analytics.goatcounter != "" %}
+  <!-- GoatCounter: privacy-friendly, no cookies -->
+  <script data-goatcounter="https://{{ site.analytics.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  {% endif %}
+{% endif %}

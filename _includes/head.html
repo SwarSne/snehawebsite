@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+{% seo %}
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Person", "name": "{{ site.title }}",
+  "jobTitle": "PhD Student, Electrical and Computer Engineering",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "University of California, Los Angeles" },
+  "alumniOf": ["Indian Institute of Technology Kharagpur", "Guru Gobind Singh Indraprastha University"],
+  "sameAs": {{ site.social.links | jsonify }} }
+</script>
+{% include analytics.html %}

@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-name">{{ site.title }}</p>
+      <p class="muted small">PhD Student, ECE · UCLA · {{ site.location }}</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:{{ site.email }}">Email</a></li>
+      <li><a href="{{ site.links.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      {% if site.links.scholar != "" %}<li><a href="{{ site.links.scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>{% endif %}
+      {% if site.links.cv != "" %}<li><a href="{{ site.links.cv | relative_url }}" target="_blank" rel="noopener">CV</a></li>{% endif %}
+    </ul>
+  </div>
+  <div class="container"><p class="mono muted tiny">© {{ site.time | date: "%Y" }} {{ site.title }} · Built with Jekyll</p></div>
+</footer>

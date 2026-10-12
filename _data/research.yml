@@ -1,0 +1,42 @@
+# Research themes. "key" links publications (publications.yml -> theme) to a theme.
+- key: accelerators
+  icon: "🧩"
+  title: "Wafer-Scale Chiplet Accelerators for LLMs"
+  short: "Architecting chiplet-based LLM inference accelerators on silicon interconnect fabric."
+  detail: >-
+    My PhD work at UCLA designs chiplet-based accelerators for large language model inference using
+    advanced packaging. In ATLAS, I architect a wafer-scale accelerator on Silicon Interconnect Fabric (SiIF)
+    with a novel hierarchical communication protocol, and run system-level design-space exploration across
+    performance, power and area.
+  tools: ["Gem5", "Gemmini", "ScaleSIM", "AstraSIM", "Verilog"]
+
+- key: chiplet-security
+  icon: "🛡️"
+  title: "Security of Chiplet & Advanced-Packaging Systems"
+  short: "Side channels, covert channels and monitoring in heterogeneous chiplet systems."
+  detail: >-
+    Splitting a chip into chiplets opens new attack surfaces in the interconnect and substrate. I study
+    side-channel leakage on network-on-wafer interconnects (NoWLeak), detect substrate-level covert channels
+    (HERA), and help design scalable security-helper chiplets for distributed on-package monitoring.
+  tools: ["Side-channel analysis", "Covert channels", "Security monitors"]
+
+- key: hw-security
+  icon: "🔐"
+  title: "Hardware Security & Trust"
+  short: "PUFs, fault-attack countermeasures and side-channel attacks on real devices."
+  detail: >-
+    Before UCLA, my work at IIT Kharagpur, IISc and the University of Florida spanned PUF-based authentication
+    on FPGAs (PUFBind, WS-BNN), a provably secure countermeasure against fault attacks on AES, side-channel
+    attacks on post-quantum Kyber and on TLS in power-grid IEDs, and deep-learning side-channel analysis
+    reaching 100% opcode-level accuracy.
+  tools: ["ChipWhisperer", "FPGA (Nexys A7)", "Vivado", "Kyber", "AES-GCM"]
+
+- key: llm-eda
+  icon: "🤖"
+  title: "LLMs for Hardware Design"
+  short: "Using large language models to generate verified RTL through high-level synthesis."
+  detail: >-
+    I evaluated GPT-3.5 Turbo, GPT-4o, Claude 3 Haiku and Claude 3.5 Sonnet for producing HLS-ready C++ that
+    Vitis HLS compiles to Verilog RTL. This two-stage flow beats direct LLM-generated Verilog on functional
+    correctness.
+  tools: ["Vitis HLS", "LLMs", "VerilogEval"]

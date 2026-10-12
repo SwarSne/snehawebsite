@@ -1,0 +1,63 @@
+---
+layout: page
+title: "Experience | Sneha Swaroopa"
+heading: "Experience & Education"
+kicker: "Labs · Industry · Degrees"
+intro: "Research roles across UCLA, IISc, the University of Florida and IIT Kharagpur, plus security engineering at Qualcomm."
+permalink: /experience/
+slug: experience
+---
+<section class="section first">
+  <div class="container">
+    <ol class="timeline">
+      {% for j in site.data.experience %}
+      <li class="job reveal">
+        <span class="job-dot" aria-hidden="true"></span>
+        <div class="job-card card">
+          <div class="job-head">
+            <img class="job-logo logo-img" src="{{ j.logo_img | relative_url }}" alt="{{ j.org }} logo" width="44" height="44" loading="lazy">
+            <div>
+              <h3>{{ j.org }}</h3>
+              <p class="muted mono small">{{ j.location }}</p>
+            </div>
+          </div>
+          <details class="role" {% if forloop.first %}open{% endif %}>
+            <summary><span class="role-title">{{ j.role }}</span><span class="role-dates mono">{{ j.dates }}</span><span class="chev" aria-hidden="true"></span></summary>
+            <ul class="highlights">{% for h in j.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
+          </details>
+          <ul class="tags">{% for t in j.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <header class="section-head reveal"><p class="kicker mono">Education</p><h2>Degrees</h2></header>
+    <div class="edu-cards">
+      {% for e in site.data.education %}
+      <article class="edu card reveal">
+        {% if e.logo_img %}<img class="edu-logo logo-img" src="{{ e.logo_img | relative_url }}" alt="{{ e.school }} logo" width="64" height="64" loading="lazy">{% else %}<div class="edu-logo mono-logo" aria-hidden="true">{{ e.logo }}</div>{% endif %}
+        <p class="role-dates mono">{{ e.dates }}</p>
+        <h3>{{ e.school }}</h3>
+        <p class="degree">{{ e.degree }}</p>
+        <p class="muted small">{{ e.detail }}</p>
+        <p class="gpa mono">GPA {{ e.gpa }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section-head reveal"><p class="kicker mono">Skills</p><h2>Toolbox</h2></header>
+    <div class="skills-grid">
+      {% for g in site.data.skills %}
+      <div class="skill-group card reveal"><h3>{{ g.group }}</h3><ul class="skill-chips">{% for s in g.items %}<li>{{ s }}</li>{% endfor %}</ul></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

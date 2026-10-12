@@ -1,0 +1,8 @@
+- group: "Architecture & Simulation"
+  items: ["Gem5", "Gemmini", "ScaleSIM", "AstraSIM"]
+- group: "Hardware Design & EDA"
+  items: ["Verilog", "VHDL", "Xilinx Vivado", "ModelSim", "Cadence Virtuoso", "Cadence Genus", "Vitis HLS"]
+- group: "Security"
+  items: ["Side-Channel Analysis", "ChipWhisperer", "PUF Design (Nexys A7-100T)", "Error-Correcting Codes", "Fault Attacks", "Post-Quantum Crypto (Kyber)"]
+- group: "Programming & ML"
+  items: ["Python", "C / C++", "CUDA", "TCL", "Bash", "Perl", "PyTorch", "TensorFlow", "scikit-learn", "NumPy", "pandas"]

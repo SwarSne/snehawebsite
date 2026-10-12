@@ -1,0 +1,34 @@
+<section class="section explorer-section" id="explorer">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker mono">Interactive · Chiplet Explorer</p>
+      <h2>Inside a <span class="grad">chiplet AI system</span></h2>
+      <p class="sub">Hover or tap a block. Then run LLM inference, inject a side-channel attack, and switch on the detector.</p>
+    </header>
+    <div class="explorer card reveal" data-explorer>
+      <div class="ex-stage">
+        <svg class="ex-svg" viewBox="0 0 520 330" role="img" aria-label="Diagram of a chiplet-based AI package with compute chiplets, HBM memory, I/O dies and a security chiplet connected by network-on-wafer links"></svg>
+        <div class="ex-status mono" aria-live="polite">Idle · hover a chiplet</div>
+      </div>
+      <div class="ex-side">
+        <div class="ex-controls" role="group" aria-label="Simulation controls">
+          <button class="ex-btn" data-mode="inference"><span>▶</span> Run LLM inference</button>
+          <button class="ex-btn danger" data-mode="attack"><span>⚠</span> Inject side-channel attack</button>
+          <button class="ex-btn safe" data-mode="detect"><span>🛡</span> Enable HERA detector</button>
+          <button class="ex-btn ghost" data-mode="reset">Reset</button>
+        </div>
+        <div class="ex-info">
+          <p class="ex-type mono">Chiplet</p>
+          <h3 class="ex-title">Pick a block</h3>
+          <p class="ex-desc">Each tile is a chiplet: a small die that's packaged with others to build a system too large to make as one chip.</p>
+          <a class="ex-more" href="{{ '/research/' | relative_url }}" hidden>Related research →</a>
+        </div>
+        <ul class="ex-legend">
+          <li><i class="lg compute"></i>AI compute</li><li><i class="lg hbm"></i>HBM memory</li>
+          <li><i class="lg io"></i>I/O die</li><li><i class="lg sec"></i>Security chiplet</li>
+          <li><i class="lg link"></i>Network-on-wafer link</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

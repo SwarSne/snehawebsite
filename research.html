@@ -1,0 +1,44 @@
+---
+layout: page
+title: "Research | Sneha Swaroopa"
+heading: "Research"
+kicker: "PhD work · UCLA ECE"
+intro: "My research sits where computer architecture meets hardware security: building chiplet-based accelerators for LLMs with advanced packaging, and finding and closing the security gaps they create."
+permalink: /research/
+slug: research
+---
+<section class="section first">
+  <div class="container">
+    <nav class="theme-jump reveal" aria-label="Research themes">
+      {% for r in site.data.research %}<a href="#{{ r.key }}">{{ r.icon }} {{ r.title }}</a>{% endfor %}
+    </nav>
+    {% include chiplet-explorer.html %}
+    {% for r in site.data.research %}
+    <article class="research-block reveal" id="{{ r.key }}">
+      <div class="rb-head">
+        <span class="theme-icon big">{{ r.icon }}</span>
+        <div>
+          <p class="kicker mono">Theme {{ forloop.index }}</p>
+          <h2>{{ r.title }}</h2>
+        </div>
+      </div>
+      <div class="rb-body">
+        <div>
+          <p class="rb-detail">{{ r.detail }}</p>
+          <ul class="tags">{% for t in r.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+        </div>
+        <div class="rb-papers">
+          <p class="mini-label mono">Related work</p>
+          {% assign rel = site.data.publications | where: "theme", r.key %}
+          {% for p in rel %}
+          <a class="rel-paper" href="{{ '/publications/' | relative_url }}#{{ p.id }}">
+            <span class="status s-{{ p.status }}">{% case p.status %}{% when 'published' %}Published{% when 'accepted' %}Accepted{% when 'filed' %}Patent{% else %}In review{% endcase %}</span>
+            <span>{{ p.title | split: ":" | first }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
