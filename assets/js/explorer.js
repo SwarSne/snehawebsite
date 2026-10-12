@@ -10,10 +10,10 @@
   const el = (tag, attrs = {}, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
 
   const TYPES = {
-    compute: { label: 'AI compute chiplet', short: 'AI', desc: 'Systolic-array accelerator tiles that run transformer layers. ATLAS maps LLM inference across many such chiplets on a wafer-scale Silicon Interconnect Fabric.', link: '/research/#accelerators' },
-    hbm: { label: 'HBM memory stack', short: 'HBM', desc: 'High-bandwidth memory that streams model weights and the KV-cache to the compute chiplets. Feeding it efficiently is the key to fast LLM inference.', link: '/research/#accelerators' },
+    compute: { label: 'AI compute chiplet', short: 'AI', desc: 'Accelerator chiplets that share the work of LLM inference. ATLAS proposes a scalable chiplet-based LLM accelerator on Silicon Interconnect Fabric with a hierarchical communication protocol.', link: '/research/#accelerators' },
+    hbm: { label: 'HBM memory stack', short: 'HBM', desc: 'High-bandwidth memory, a common building block in AI packages, that feeds data to the compute chiplets.', link: '/research/#accelerators' },
     io: { label: 'I/O die', short: 'I/O', desc: 'Connects the package to the host, network and other packages. Prompts come in here and tokens go out.', link: '/research/#accelerators' },
-    sec: { label: 'Security helper chiplet', short: 'SEC', desc: 'A dedicated on-package monitor that watches traffic and power across chiplets, from the scalable security-monitoring work at ISQED 2026.', link: '/research/#chiplet-security' },
+    sec: { label: 'Security helper chiplet', short: 'SEC', desc: 'A security helper chiplet for distributed hardware monitoring across a chiplet system, the architecture explored in the ISQED 2026 paper on scalable security monitoring.', link: '/research/#chiplet-security' },
   };
   // 5 x 3 package layout
   const LAYOUT = [
@@ -56,10 +56,10 @@
     const T = TYPES[n.t];
     let title = T.label, desc = T.desc, link = T.link, type = 'Chiplet';
     if (n === attacker && mode !== 'idle' && mode !== 'inference') {
-      type = isolated ? 'Isolated attacker' : 'Malicious chiplet';
-      title = isolated ? 'Attacker isolated by HERA' : 'Side-channel attacker';
-      desc = isolated ? 'HERA detected the covert channel at the substrate level and isolated this chiplet, so the leak is shut down.'
-        : 'A compromised chiplet watches power and timing on the shared network-on-wafer to infer what its neighbour is computing. This is the kind of leakage NoWLeak (ICCAD 2026) demonstrates.';
+      type = isolated ? 'Flagged by detector' : 'Malicious chiplet';
+      title = isolated ? 'Covert channel flagged' : 'Leaking chiplet';
+      desc = isolated ? 'A substrate-level detector flags the suspicious channel. HERA (MWSCAS 2026) proposes this kind of covert-channel detection for heterogeneous chiplet systems. The greyed-out tile is only illustrative.'
+        : 'Shared interconnect between chiplets can leak information to a malicious neighbour. NoWLeak (ICCAD 2026) investigates side-channel leakage at the network-on-wafer interconnect level.';
       link = '/publications/#' + (isolated ? 'hera' : 'nowleak');
     }
     info.type.textContent = type; info.title.textContent = title; info.desc.textContent = desc;
@@ -91,9 +91,9 @@
     if (m === 'reset') { mode = 'idle'; attacker = victim = null; isolated = false; clearFx(); paint(); setStatus('Idle · hover a chiplet'); return; }
     if (m === 'detect' && !attacker) setMode('attack');
     if (m === 'attack' && !attacker) { attacker = at(0, 3); victim = at(1, 3); isolated = false; }
-    if (m === 'detect') { rings.push({ r: 0 }); setStatus('HERA scanning substrate for covert channels…'); }
+    if (m === 'detect') { rings.push({ r: 0 }); setStatus('Detector monitoring the substrate…'); }
     if (m === 'inference') setStatus('Running LLM inference · tokens streaming');
-    if (m === 'attack') setStatus('⚠ Side channel active: attacker probing its neighbour');
+    if (m === 'attack') setStatus('⚠ Leakage on the network-on-wafer link');
     mode = m; paint();
     if (attacker && (m === 'attack' || m === 'detect')) show(attacker);
     root.querySelectorAll('.ex-btn').forEach(b => b.classList.toggle('on', b.dataset.mode === m));
@@ -116,7 +116,7 @@
     if (leakArc) leakArc.classList.toggle('off', !leaking);
     links.forEach(l => l.line.classList.toggle('leaky', !!attacker && !isolated && ((l.a === attacker && l.b === victim) || (l.b === attacker && l.a === victim))));
   }
-  function staticFrame() { /* reduced motion: show end state without animation */ if (mode === 'detect') { isolated = true; paint(); setStatus('✓ Covert channel detected · attacker isolated'); show(attacker); } }
+  function staticFrame() { /* reduced motion: show end state without animation */ if (mode === 'detect') { isolated = true; paint(); setStatus('✓ Suspicious channel flagged'); show(attacker); } }
 
   function tick(ts) {
     const dt = Math.min(0.05, (ts - last) / 1000 || 0); last = ts;
@@ -144,7 +144,7 @@
       if (!rg.el) rg.el = el('circle', { cx: sec.cx, cy: sec.cy, r: 0, class: 'ex-ring' }, fxLayer);
       rg.r += 170 * dt; rg.el.setAttribute('r', rg.r); rg.el.style.opacity = Math.max(0, 1 - rg.r / 300);
       if (attacker && !isolated && rg.r >= Math.hypot(attacker.cx - sec.cx, attacker.cy - sec.cy)) {
-        isolated = true; paint(); setStatus('✓ Covert channel detected · attacker isolated'); show(attacker);
+        isolated = true; paint(); setStatus('✓ Suspicious channel flagged'); show(attacker);
       }
       if (rg.r > 300) { rg.el.remove(); if (mode === 'detect' && !isolated) rings.push({ r: 0 }); return false; }
       return true;
